@@ -1,11 +1,15 @@
 package me.abbah;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.Random;
 
 public class RandomNumberGenerator implements NumberGenerator {
     private final Random random = new Random();
-    private final int maxNumber = 100;
+
+    @Autowired
+    private int maxNumber;
 
     @Override
     public int next() {

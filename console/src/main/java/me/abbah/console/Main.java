@@ -1,6 +1,6 @@
 package me.abbah.console;
 
-import me.abbah.AppConfig;
+import me.abbah.config.AppConfig;
 import me.abbah.MessageGenerator;
 import me.abbah.NumberGenerator;
 import org.slf4j.Logger;
