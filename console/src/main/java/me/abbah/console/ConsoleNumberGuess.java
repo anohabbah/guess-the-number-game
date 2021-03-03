@@ -1,25 +1,26 @@
 package me.abbah.console;
 
+import lombok.extern.slf4j.Slf4j;
 import me.abbah.Game;
 import me.abbah.MessageGenerator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Slf4j
 @Component
 public class ConsoleNumberGuess {
-    private static final Logger log = LoggerFactory.getLogger(ConsoleNumberGuess.class);
 
-    @Autowired
-    private Game game;
+    private final Game game;
 
-    @Autowired
-    private MessageGenerator messageGenerator;
+    private final MessageGenerator messageGenerator;
+
+    public ConsoleNumberGuess(Game game, MessageGenerator messageGenerator) {
+        this.game = game;
+        this.messageGenerator = messageGenerator;
+    }
 
     @EventListener(ContextRefreshedEvent.class)
     public void start() {

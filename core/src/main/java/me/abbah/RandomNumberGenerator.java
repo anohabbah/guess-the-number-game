@@ -1,23 +1,28 @@
 package me.abbah;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Getter;
+import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
+@Component
 public class RandomNumberGenerator implements NumberGenerator {
     private final Random random = new Random();
 
-    @Autowired
-    private int maxNumber;
+    @Getter
+    private final int maxNumber;
 
-    @Override
-    public int next() {
-        return random.nextInt(this.maxNumber);
+    @Getter
+    private final int minNumber;
+
+    public RandomNumberGenerator(int maxNumber, int minNumber) {
+        this.maxNumber = maxNumber;
+        this.minNumber = minNumber;
     }
 
     @Override
-    public int getMaxNumber() {
-        return this.maxNumber;
+    public int next() {
+        return random.nextInt(this.maxNumber - this.minNumber) + this.maxNumber;
     }
 }
