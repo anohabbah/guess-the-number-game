@@ -72,7 +72,7 @@ public class GameImpl implements Game {
             }
 
             if (guess < number) {
-                smallest = biggest + 1;
+                smallest = guess + 1;
             }
         }
 
