@@ -16,13 +16,13 @@ public class RandomNumberGenerator implements NumberGenerator {
     @Getter
     private final int minNumber;
 
-    public RandomNumberGenerator(int maxNumber, int minNumber) {
+    public RandomNumberGenerator(@MaxNumber int maxNumber, @MinNumber int minNumber) {
         this.maxNumber = maxNumber;
         this.minNumber = minNumber;
     }
 
     @Override
     public int next() {
-        return random.nextInt(this.maxNumber - this.minNumber) + this.maxNumber;
+        return random.nextInt(this.maxNumber - this.minNumber) + this.minNumber;
     }
 }
