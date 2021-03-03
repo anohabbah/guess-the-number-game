@@ -26,7 +26,6 @@ public class Main {
 
         // get fame bean from context
         Game game = context.getBean(Game.class);
-        game.reset();
 
         // close context
         context.close();
