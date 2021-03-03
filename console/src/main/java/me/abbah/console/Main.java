@@ -1,5 +1,8 @@
-package me.abbah;
+package me.abbah.console;
 
+import me.abbah.AppConfig;
+import me.abbah.MessageGenerator;
+import me.abbah.NumberGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -22,8 +25,9 @@ public class Main {
 
         log.info("number = {}", number);
 
-        // get fame bean from context
-        Game game = context.getBean(Game.class);
+        MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
+        log.info("getMainMessage : {}", messageGenerator.getMainMessage());
+        log.info("getResultMessage : {}", messageGenerator.getResultMessage());
 
         // close context
         context.close();

@@ -33,7 +33,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
             return "You lost. The number was " + game.getNumber();
         }
 
-        if (game.isValidNumberRange()) {
+        if (!game.isValidNumberRange()) {
             return "Invalid number range !";
         }
 
