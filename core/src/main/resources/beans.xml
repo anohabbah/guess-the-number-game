@@ -4,5 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
-    <bean id="numberGenerator" class="me.abbah.RandomNumberGenerator" />
+    <bean id="numberGenerator" class="me.abbah.RandomNumberGenerator"/>
+
+    <bean id="game" class="me.abbah.GameImpl">
+        <constructor-arg ref="numberGenerator"/>
+    </bean>
 </beans>
