@@ -7,6 +7,6 @@
     <bean id="numberGenerator" class="me.abbah.RandomNumberGenerator"/>
 
     <bean id="game" class="me.abbah.GameImpl">
-        <constructor-arg ref="numberGenerator"/>
+        <property name="numberGenerator" ref="numberGenerator"/>
     </bean>
 </beans>
