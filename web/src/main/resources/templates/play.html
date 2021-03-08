@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Guess the number game</title>
+</head>
+<body>
+<div style="text-align: center">
+	<h1 th:text="'Guess the Number Game'">Guess the Number Game</h1>
+	<h3 th:text="${mainMessage}">Main Message content</h3>
+	<h3 th:text="${resultMessage}">Result Message content</h3>
+
+	<form action="play" method="post">
+		<label for="guess">Enter your guess</label>
+		<input type="number" name="guess" id="guess">
+
+		<input type="submit" value="Submit"/>
+	</form>
+
+	<footer>Created by Abbah ! Game by Learn Programming Academy</footer>
+</div>
+</body>
+</html>
